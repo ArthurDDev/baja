@@ -44,12 +44,14 @@ npm install
 ```
 MUITO CUIDADO COM ESSA PARTE. SE O SEU COMPUTADOR TIVER POUCA MEMORIA VAI DAR ERRO
 
-2. Crie a build
+2. Copie o arquivo main.js.example para main.js, e insira a chave do google maps
+
+3. Crie a build
 ```
 npm run build
 ```
 
-3. Inicie o pm2
+4. Inicie o pm2
 ```
 pm2 start script.json --watch
 ```
