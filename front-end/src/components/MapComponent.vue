@@ -13,6 +13,13 @@
         map-type-id="satellite"
         style="width: 100vw; height: 900px"
     >
+    <GMapMarker
+      :key="index"
+      v-for="(m, index) in markers"
+      :position="m.position"
+      :clickable="true"
+      :draggable="true"
+    />
     </GMapMap>
   </template>
   
@@ -32,6 +39,18 @@
           },
         ],
       },
+      markers: [
+        {
+          position: {
+            lat: -25.450677, lng: -49.231746
+          },
+        },
+        {
+          position: {
+            lat: -25.550500, lng: -49.231746
+          },
+        }
+      ]
     };
   },
   }
