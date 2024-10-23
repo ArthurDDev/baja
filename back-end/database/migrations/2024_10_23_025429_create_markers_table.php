@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('data', function (Blueprint $table) {
+        Schema::create('markers', function (Blueprint $table) {
             $table->id();
+            $table->float('lat');
+            $table->float('lng');
             $table->timestamps();
-            $table->integer('gps');
         });
     }
 
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('data');
+        Schema::dropIfExists('markers');
     }
 };

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class dataRequest extends FormRequest
+class markerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,8 @@ class dataRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'gps'       => 'required | integer',
+            'lat' => 'required | float',
+            'lng' => 'required | float',
         ];
     }
 }

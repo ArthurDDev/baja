@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Data extends Model
+class Marker extends Model
 {
-    protected $fillable = ['gps'];
+    protected $fillable = ['lat', 'lng'];
 }

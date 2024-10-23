@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Models\Data;
-use App\Http\Requests\DataRequest;
+use App\Models\Marker;
+use App\Http\Requests\MarkerRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class DataController extends Controller
+class MarkerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $data = Data::all();
+        $marker = Marker::all();
         return response()->json([
             'message' => 'OK',
-            'data' => $data,
+            'marker' => $marker,
         ], 200);
     }
 
@@ -26,10 +26,10 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Data::create($request->all());
+        $marker = Marker::create($request->all());
         return response()->json([
             'message' => 'OK',
-            'data' => $data,
+            'marker' => $marker,
         ], 201);
     }
 
@@ -38,14 +38,14 @@ class DataController extends Controller
      */
     public function show(string $id)
     {
-        $data = Data::find($id);
-        if(!$data)
+        $marker = Marker::find($id);
+        if(!$marker)
             return response()->json([
                 'message' => 'Dados nao encontrados',
             ], 404);
         return response()->json([
             'message' => 'OK',
-            'data' => $data,
+            'marker' => $marker,
         ], 200);
     }
 
@@ -54,16 +54,16 @@ class DataController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $data = Data::find($id);
-        if(!$data)
+        $marker = Marker::find($id);
+        if(!$marker)
             return response()->json([
                 'message' => 'Dados nao encontrados',
-                'data' => null,
+                'marker' => null,
             ], 404);
-        $data->update($request->all());
+        $marker->update($request->all());
         return response()->json([
             'message' => 'OK',
-            'data' => $data,
+            'marker' => $marker,
         ], 200);
     }
 
@@ -72,16 +72,16 @@ class DataController extends Controller
      */
     public function destroy(string $id)
     {
-        $data = Data::find($id);
-        if(!$data)
+        $marker = Marker::find($id);
+        if(!$marker)
             return response()->json([
                 'message' => 'Dados nao encontrados',
-                'data' => null,
+                'marker' => null,
             ], 404);
-        $data->delete();
+        $marker->delete();
         return response()->json([
             'message' => 'Dados removidos',
-            'data' => $data,
+            'marker' => $marker,
         ], 200);
     }
 }
