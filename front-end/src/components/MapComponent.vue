@@ -11,7 +11,7 @@
       fullscreenControl: true,
     }"
     map-type-id="satellite"
-    style="width: 100vw; height: 900px"
+    style="width: 100vh; height: 100%"
   >
     <GMapMarker
       :key="marker.id"
